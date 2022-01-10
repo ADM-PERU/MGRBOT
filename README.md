@@ -1,1 +1,1 @@
-# MGRBOT
+# VPSbot

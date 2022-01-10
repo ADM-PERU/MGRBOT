@@ -1,25 +1,26 @@
 #!/bin/bash
-SCPresq="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FETS1QRVJVL01HUkJPVC9tYWluL1RlbGVCb3RHZW4vc291cmNlcw=="
+SCPresq="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1JhemhpZWwyMDE5L2Jnbi9tYWluL1RlbGVCb3RHZW4vc291cmNlcw=="
 SUB_DOM='base64 -d'
 bar="\e[0;36m=====================================================\e[0m"
 
 CIDdir=/etc/ADM-db && [[ ! -d ${CIDdir} ]] && mkdir ${CIDdir}
-wget -O /etc/ADM-db/BotGen.sh https://raw.githubusercontent.com/ADM-PERU/MGRBOT/main/TeleBotGen/sources/BotGen.sh; chmod 777 /etc/ADM-db/BotGen.sh
+wget -O /etc/ADM-db/BotGen.sh https://raw.githubusercontent.com/Razhiel2019/bgn/main/TeleBotGen/sources/BotGen.sh; chmod 777 /etc/ADM-db/BotGen.sh
 
+tr=${id}
 check_ip () {
 MIP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
 MIP2=$(wget -qO- ipv4.icanhazip.com)
 [[ "$MIP" != "$MIP2" ]] && IP="$MIP2" || IP="$MIP"
 echo "$IP" > /usr/bin/vendor_code
 }
-
 function_verify () {
-check_ip
- permited=$(curl -sSL "https://raw.githubusercontent.com/ADM-PERU/MGRBOT/main/TeleBotGen/Control/Control-Bot")
+echo -e "verificando..."
+ check_ip
+ permited=$(curl -sSL "https://raw.githubusercontent.com/Razhiel2019/bgn/main/TeleBotGen/Control/Control-Bot")
   [[ $(echo $permited|grep "${IP}") = "" ]] && {
   clear
   echo -e "\n\n\n\e[31m====================================================="
-  echo -e "\e[31m      ¡LA IP $(wget -qO- ipv4.icanhazip.com) NO ESTA AUTORIZADA!"
+  echo -e "\e[31m      ¡LA IP $(wget -qO- ipv4.icanhazip.com) NO ESTA AUTORIZADA!\n     SI DESEAS USAR EL BOTGEN CONTACTE A @RAZHIEL"
   echo -e "\e[31m=====================================================\n\n\n\e[0m"
   [[ -d /etc/ADM-db ]] && rm -rf /etc/ADM-db
 [[ ! -e "/bin/ShellBot.sh" ]] && rm /bin/ShellBot.sh
@@ -28,15 +29,40 @@ check_ip
  ### INTALAR VERCION DE SCRIPT
   clear
   echo -e "\n\n\n\e[32m====================================================="
-  echo -e "\e[32m      ¡LA IP $(wget -qO- ipv4.icanhazip.com) ESTA AUTORIZADA!"
+  echo -e "\e[32m      ¡LA IP $(wget -qO- ipv4.icanhazip.com) ESTA AUTORIZADA!\n       SI DESEAS USAR EL BOTGEN CONTACTE A @FelipeCouoh"
   echo -e "\e[32m=====================================================\n\n\n\e[0m"
-  sleep 2
-  [[ -d /etc/ADM-db ]] && rm -rf /etc/ADM-db
+  CIDdir=/etc/ADM-db && [[ ! -d ${CIDdir} ]] && mkdir ${CIDdir}
+  v1=$(curl -sSL "https://raw.githubusercontent.com/Razhiel2019/bgn/main/Vercion")
+  echo "$v1" > /etc/ADM-db/vercion
+  echo "@RAZHIEL" > ${CIDdir}/resell
   
-  #Instalar Version de Script
-  [[ -e /etc/ADM-db ]] && vercion="$(cat /etc/ADM-db)" || vercion="$(curl -sSL "https://raw.githubusercontent.com/ADM-PERU/MGRBOT/main/TeleBotGen/Vercion")"
-  echo "$rsll" > ${CIDdir}/resell
   }
+}
+
+lim-bot () {
+unset option
+clear
+echo -e "$bar"
+echo -e "  \033[1;37mIngrese el Limite del Bot"
+echo -e "$bar"
+echo -n "Limite: "
+read opcion
+echo "$opcion" > ${CIDdir}/limit
+echo "$opcion" > /etc/limit
+#echo "sed -i "s/1001282138571/0/g" /etc/gerar-sh-log
+echo '#!/bin/bash -e
+sleep 24h
+uskk=$(cat < /etc/ADM-db/limit)
+lim=$(cat < /etc/limit)
+uskk=$(( $uskk + $lim ))
+echo $uskk > /etc/ADM-db/limit
+screen -dmS sumlimit bash /etc/ADM-db/sumlimit
+exit
+' > ${CIDdir}/sumlimit
+echo -e "$bar"
+read foo
+screen -dmS sumlimit bash /etc/ADM-db/sumlimit
+bot_gen
 }
 
 veryfy_fun () {
@@ -59,6 +85,7 @@ cd $HOME
 REQUEST=$(echo $SCPresq|$SUB_DOM)
 wget -O "$HOME/lista-arq" ${REQUEST}/lista-bot > /dev/null 2>&1
 sleep 1s
+echo 999 > ${CIDdir}/limit
 [[ -e $HOME/lista-arq ]] && {
 for arqx in `cat $HOME/lista-arq`; do
 echo -ne "\033[1;33mDescargando: \033[1;31m[$arqx] "
@@ -68,7 +95,13 @@ echo -e "\033[1;31m- \033[1;32mRecibido!"
 } || echo -e "\033[1;31m- \033[1;31mFalla (no recibido!)"
 done
  }
+[[ -e /root/token ]] && mv /root/token /etc/ADM-db/token 
+[[ -e /root/Admin-ID ]] && mv /root/Admin-ID /etc/ADM-db/Admin-ID 
+[[ -e /root/User-ID ]] && mv /root/User-ID /etc/ADM-db/User-ID 
+echo "Restaurando Token y ADMINISTRADOR"
  rm $HOME/lista-arq
+ read -p "Presiona Enter para continuar"
+ bot_gen
 }
 
 ini_token () {
@@ -107,7 +140,7 @@ echo -n "ID: "
 read opcion
 echo "$opcion" > ${CIDdir}/Admin-ID
 echo -e "$bar"
-echo -e "  \033[1;32mID se guardo con exito!" && echo -e "$bar" && echo -e "  \033[1;37mdesde su apps (telegram). ingresar al bot!\n  digite el comando \033[1;31m/menu\n  \033[1;37mprueve si tiene acceso al menu extendido." && echo -e "$bar"
+echo -e "  \033[1;32mID guardo con exito!" && echo -e "$bar" && echo -e "  \033[1;37mdesde su apps (telegram). ingresar al bot!\n  digite el comando \033[1;31m/menu\n  \033[1;37mprueve si tiene acceso al menu extendido." && echo -e "$bar"
 read foo
 bot_gen
 }
@@ -138,9 +171,9 @@ sed -i '/BotGen.sh/ d' /root/cron
 crontab /root/cron
 rm /root/cron
 clear
-echo -e $bar
+msg -e "$bar"
 echo -e "\033[1;31m            BotGen fuera de linea"
-echo -e $bar
+msg -e "$bar"
 sleep 3
 fi
 bot_gen
@@ -151,7 +184,7 @@ clear
 echo -e "$bar"
 echo -e "            \e[47m\e[30m Instrucciones rapidas \e[0m"
 echo -e "$bar"
-echo -e "\033[1;37m   Es necesario crear un bot en \033[1;32m@BotFather "
+echo -e "\033[1;37m  $(source trans -b pt:${tr} " Es necesario crear un bot en ")\033[1;32m@BotFather "
 echo -e "$bar"
 echo -e "\033[1;32m1- \033[1;37mEn su apps telegram ingrese a @BotFather"
 echo -e "\033[1;32m2- \033[1;37mDigite el comando \033[1;31m/newbot"
@@ -169,15 +202,18 @@ bot_gen
 }
 
 bot_conf () {
+[[ -e /etc/ADM-db/token ]] && mv /etc/ADM-db/token /root/token
+[[ -e /etc/ADM-db/Admin-ID ]] && mv /etc/ADM-db/Admin-ID /root/Admin-ID
 check_ip
 function_verify
 instaled=/etc/ADM-db/sources && [[ ! -d ${instaled} ]] && download
-bot_gen
 }
 
 msj_prueba () {
+
 TOKEN="$(cat /etc/ADM-db/token)"
 ID="$(cat /etc/ADM-db/Admin-ID)"
+
 [[ -z $TOKEN ]] && {
 	clear
 	echo -e "$bar"
@@ -192,48 +228,77 @@ ID="$(cat /etc/ADM-db/Admin-ID)"
 		echo -e "$bar"
 		read foo
 	} || {
-		MENSAJE="Esto es un mesaje de prueba!"
+		MENSAJE="Hola, Mensale de Prueba del BotGen Generador!"
 		URL="https://api.telegram.org/bot$TOKEN/sendMessage"
 		curl -s -X POST $URL -d chat_id=$ID -d text="$MENSAJE" &>/dev/null
 		clear
 		echo -e "$bar"
-		echo -e "\033[1;37m mensaje enviado...!"
+		echo -e "\033[1;37m Mensaje enviado Exitosamente...!"
 		echo -e "$bar"
 		sleep 2
 	}
 }
+
 bot_gen
 }
+
+act-bot () {
+echo "Respaldando TOKEN y ADMINISTRADOR" 
+[[ -e /etc/ADM-db/token ]] && mv /etc/ADM-db/token /root/token
+[[ -e /etc/ADM-db/Admin-ID ]] && mv /etc/ADM-db/Admin-ID /root/Admin-ID
+[[ -e /etc/ADM-db/User-ID ]] && mv /etc/ADM-db/User-ID /root/User-ID
+rm -rf /etc/ADM-db/sources/gerar_key && download
+}
+
 
 bot_gen () {
 clear
 unset PID_GEN
+CIDdir=/etc/ADM-db && [[ ! -d ${CIDdir} ]] && mkdir ${CIDdir}
 PID_GEN=$(ps x|grep -v grep|grep "BotGen.sh")
-[[ ! $PID_GEN ]] && PID_GEN="\033[1;31moffline" || PID_GEN="\033[1;32monline"
-
+PID_on=$(ps x|grep -v grep|grep "modelid")
+[[ ! $PID_on ]] && PID_on="\033[1;31mOFF" || PID_on="\033[1;32mON"
+[[ ! $PID_GEN ]] && PID_GEN="\033[1;31mOFF" || PID_GEN="\033[1;32mON"
+[[ -e ${CIDdir}/token ]] && tk="\033[1;32mOK" || tk="\033[1;31mNULL"
+[[ -e ${CIDdir}/Admin-ID ]] && adid="\033[1;32mOK" || adid="\033[1;31mNULL"
+limcont=$(cat /etc/ADM-db/limit) 
+[[ "${limcont}" = "999" ]] && limted="Ilimitado" || limted=$(cat /etc/ADM-db/limit)
 echo -e "$bar"
-echo -e "     \e[47m \e[30m>>>>>>  BOT-GEN =》 \e[1;31mGHOST ||\e[1;32m V.1.0\e[0m\e[47m \e[30m<<<<<< \e[0m"
+echo -e "     \e[47m \e[30m>>>>>>  BotGen by \e[1;36mFelipeCouoh\e[1;32m  $(cat ${CIDdir}/vercion)\e[0m\e[47m \e[30m<<<<<< \e[0m"
 echo -e "$bar"
-echo -e "\033[1;32m[1] \033[1;36m> \033[1;37mTOKEN DEL BOT"
-echo -e "\033[1;32m[2] \033[1;36m> \033[1;37mINICIAR/PARAR BOT $PID_GEN\033[0m"
-echo -e "\033[1;32m[3] \033[1;36m> \033[1;37mID DE USUARIO TELEGRAM"
-echo -e "\033[1;32m[4] \033[1;36m> \033[1;37mMENSAJE DE PRUEBA"
-echo -e "\033[1;32m[5] \033[1;36m> \033[1;37mMANUAL"
+echo -e "\033[1;32m[1] \033[1;36m> \033[1;37m TOKEN DEL BOT $tk "
+echo -e "\033[1;32m[2] \033[1;36m> \033[1;37m INICIAR/PARAR BOT $PID_GEN\033[0m"
+echo -e "\033[1;32m[3] \033[1;36m> \033[1;37m ID DE USUARIO TELEGRAM  $adid"
+echo -e "\033[1;32m[4] \033[1;36m> \033[1;37m Cambiar Contacto -> $(cat < ${CIDdir}/resell)"
+echo -e "\033[1;32m[5] \033[1;36m> \033[1;37m MENSAJE DE PRUEBA"
+echo -e "\033[1;32m[6] \033[1;36m> \033[1;37m MANUAL De Uso"
+echo -e "\033[1;32m[7] \033[1;36m> \033[1;37m Autorizar ID Limitado $PID_on"
+echo -e "\033[1;32m[8] \033[1;36m> \033[1;37m Actualizar BotGen"
+echo -e "\033[1;32m[9] \033[1;36m> \033[1;37m Aplicar Limite diario de Generadas \033[1;32m$limted"
+echo -e "\033[1;32m[10] \033[1;36m> \033[1;37mAplicar Mensaje de Bienvenida de No Autorizado"
 echo -e "$bar"
-echo -e "\e[1;32m[0] \e[36m>\e[0m \e[47m\e[30m <<ATRAS "
+echo -e "$bar"
+echo -e "\e[1;32m[0] \e[36m>\e[0m \e[47m\e[30m << ATRAS "
 echo -e "$bar"
 echo -n "Opcion: "
 read opcion
 case $opcion in
-0) ;;
+0) exit ;;
 1) ini_token;;
 2) start_bot;;
 3) ini_id;;
-4) msj_prueba;;
-5) ayuda_fun;;
+4) ini_res;;
+5) msj_prueba;;
+6) ayuda_fun;;
+7) source <(curl -sSL https://raw.githubusercontent.com/Razhiel2019/bgn/main/bot-permited.sh) ;;
+8) act-bot ;;
+9) lim-bot ;;
 *) bot_gen;;
 esac
 }
 [[ -e "/etc/ADM-db/sources/gerar_key" ]] || download
 bot_gen
 #
+
+
+
