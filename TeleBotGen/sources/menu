@@ -66,6 +66,7 @@ bot_retorno="  🔰 𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘 a ADM-OS SYSTEM �
 		 bot_retorno+="/cache ❈ OPTIMIZA SERVIDOR |\n"
 		 bot_retorno+="/update ❈ ACTUALIZA BOT |\n"
 		 bot_retorno+="/reboot ❈ REINICIA SERVIDOR VPS |\n"
+		 bot_retorno+="/donar ❈ ACTIVA OPCION PARA DONAR |\n"
 		 bot_retorno+="$LINE\n"
 		 menu_print
 	 fi	
