@@ -1,10 +1,10 @@
 #!/bin/bash
 link_src () {
 	bot_retorno="$LINE\n"
-	bot_retorno+=" 💥 Instalador Oficial 💥 \n 🧬 Soporte : Ubuntu 18.04 - 20.04 \n"
-	bot_retorno+="Verifica tus Keys, : @RAZHIEL \n"
+	bot_retorno+=" ❗ INSTALADOR OFICIAL ADM-PERU VIP ❗ \n 🧬 Soporte : Ubuntu 18.04 - 20.04 \n"
+	bot_retorno+="Verifica tus Keys : @GHOST \n"
 	bot_retorno+="$LINE\n"
-	bot_retorno+="wget https://www.dropbox.com/s/fsfh102fvq7werz/ADMOSV; chmod 777 ADMOSV; ./ADMOSV\n"
+	bot_retorno+="wget https://raw.githubusercontent.com/ADM-PERU/VIP/main/instalscript.sh; chmod 777 instalscript.sh && ./instalscript.sh\n"
 	bot_retorno+="$LINE\n"
         bot_retorno+="🔘 TOCA PARA COPIAR LA INFO 🔘\n"
         bot_retorno+="$LINE\n"
