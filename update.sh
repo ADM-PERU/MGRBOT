@@ -2,7 +2,7 @@
 
 dirb="/etc/ADM-db" && [[ ! -d ${dirb} ]] && mkdir ${dirb}
 dirs="${dirb}/sources" && [[ ! -d ${dirs} ]] && mkdir ${dirs}
-SCPresq="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FETS1QRVJVL01HUkJPVC9tYWluL1RlbGVCb3RHZW4vc291cmNlcw=="
+SCPresq="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0NodW1vR0gvVlBTYm90L21haW4vVGVsZUJvdEdlbi9zb3VyY2Vz"
 SUB_DOM='base64 -d'
 bar="\e[0;36m=====================================================\e[0m"
 
@@ -36,6 +36,7 @@ chmod +x ${ARQ}/$1
 }
 
 start_bot () {
+# [[ ! -e "${CIDdir}/token" ]] && echo "null" > ${CIDdir}/token
 unset PIDGEN
 PIDGEN=$(ps aux|grep -v grep|grep "BotGen.sh")
 if [[ ! $PIDGEN ]]; then
@@ -47,9 +48,9 @@ fi
 
 mensaje () {
  if [[ $1 = 1 ]]; then
-  MENSAJE="AGUARDE, Estamos Actualizando"
+  MENSAJE="Actualizando BotGen"
  elif [[ $1 = 2 ]]; then
-  MENSAJE="DIRECTORIO Actualizado"
+  MENSAJE="BotGen Actualizado"
  fi
  TOKEN="$(cat ${dirb}/token)"
  ID="$(cat ${dirb}/Admin-ID)"
@@ -57,7 +58,6 @@ mensaje () {
  curl -s -X POST $URL -d chat_id=$ID -d text="$MENSAJE"
 }
 
-sleep 5
 mensaje 1
 sleep 1
 update
