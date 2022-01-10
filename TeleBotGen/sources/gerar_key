@@ -1,14 +1,14 @@
 #!/bin/bash
 
 [[ -e /etc/newadm-instalacao ]] && BASICINST="$(cat /etc/newadm-instalacao)" || 
-BASICINST="ADMbot.sh apacheon.sh blockBT.sh budp.sh Crear-Demo.sh C-SSR.sh dns-netflix.sh dropbear.sh fai2ban.sh gestor.sh menu message.txt openvpn.sh paysnd.sh PDirect.py PGet.py POpen.py ports.sh PPriv.py PPub.py shadowsocks.sh Shadowsocks-libev.sh Shadowsocks-R.sh sockspy.sh speed.sh speedtest.py squid.sh squidpass.sh ssl.sh sslh.sh tcp.sh ultrahost Unlock-Pass-VULTR.sh usercodes utils.sh v2ray.sh trojan.sh wireguard.sh clash.sh danted.sh"
+BASICINST="ADMbot.sh apacheon.sh blockBT.sh budp.sh Crear-Demo.sh C-SSR.sh dns-netflix.sh dropbear.sh fai2ban.sh gestor.sh menu message.txt openvpn.sh paysnd.sh PDirect.py PGet.py POpen.py ports.sh PPriv.py PPub.py shadowsocks.sh Shadowsocks-libev.sh Shadowsocks-R.sh sockspy.sh speed.sh speedtest.py squid.sh squidpass.sh ssl.sh tcp.sh ultrahost Unlock-Pass-VULTR.sh usercodes utils.sh v2ray.sh"
 SCPT_DIR="/etc/SCRIPT"
 IVAR="/etc/http-instas"
 usadas="/etc/http-instas"
 [[ ! -e ${SCPT_DIR} ]] && mkdir ${SCPT_DIR}
 INSTA_ARQUIVOS="ADMVPS.zip"
 DIR="/etc/http-shell"
-LIST="-SO-MDA"
+LIST="KTSOHG:RENWO "
 
 gerar_key () {
 meu_ip_fun
@@ -19,24 +19,21 @@ valuekey+="$(echo $(($RANDOM*10))|head -c 5)"
 fun_list "$valuekey"
 keyfinal=$(ofus "$IP:8888/$valuekey/$LIST")
 local bot_retorno="$LINE\n"
-bot_retorno+="  🔰 Key Generada Exitosamente! 🔰\n ⌚Fecha y Hora $(printf '%(%D-%H:%M:%S)T') ✅\n ⚠️ Autodestruccion 24 horas o al Usarla ⚠️\n"
+bot_retorno+="    🔰   BOTGEN - GHOST OWNER   🔰 \n "
+bot_retorno+="  Reseller : [$message_from_first_name $message_from_last_name] \n"
 bot_retorno+="$LINE\n"
-bot_retorno+="  ⚠️ ADMINISTRADOR BOTGEN ⚠️ \n "
-bot_retorno+=" 🛡️ Reseller 🛡️ : [$message_from_first_name $message_from_last_name] \n"
-bot_retorno+="$LINE\n"
-bot_retorno+="        💥 KEY GENERADA 💥\n"
+bot_retorno+="        KEY FINAL GENERADA\n"
 bot_retorno+="$LINE\n"
 bot_retorno+=" ${keyfinal} \n"
 bot_retorno+="$LINE\n"
-bot_retorno+="  🛡️  ENLACE DE INSTALADOR OFICIAL  🛡️ \n"
+bot_retorno+="  ⚠️   INSTALADOR OFICIAL   ⚠️ \n"
 bot_retorno+="$LINE\n"
-bot_retorno+="wget https://www.dropbox.com/s/fsfh102fvq7werz/ADMOSV; chmod 777 ADMOSV; ./ADMOSV\n"
+bot_retorno+="sudo apt-get update -y && apt-get upgrade -y; wget https://raw.githubusercontent.com/ADM-PERU/VIP/main/instalscript.sh; chmod 777 instalscript.sh && ./instalscript.sh\n"
 bot_retorno+="$LINE\n"
-bot_retorno+="🚀 Soporte : Ubuntu 18.04 - 20.04\n    💻 SO Recomendado: Ubuntu 18.04 \n 💳 Solicita tu Acceso 💳\n"
-bot_retorno+="$LINE\n"
+bot_retorno+="  Soporte : Ubuntu 18.04 - 20.04\n    💻 SO Recomendado: Ubuntu 18.04 \n 💳 Solicita tu Acceso 💳\n"
 bot_retorno+=" 🔐 『 $(cat /etc/http-instas) 』keys Usadas 🔓『 $numkey_gen 』keys Generadas \n"
 bot_retorno+="$LINE\n"
-bot_retorno+="  Limite Actual Permitido 『 $limted 』 \n"
+bot_retorno+=" FECHA DE KEY: $(printf '%(%D - %H:%M:%S)T') ✅\n ⚠️ Autodestruccion 24 horas o al Usarla ⚠️\n"
 bot_retorno+="$LINE\n"
 bot_retorno+="🔘 TOCA PARA COPIAR LA INFO 🔘\n"
 bot_retorno+="$LINE\n"
