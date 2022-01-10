@@ -1,0 +1,13 @@
+#!/bin/bash
+
+reboot_src () {
+bot_retorno="$LINE\n"
+          bot_retorno+="LA IP SE REINICIARA Y DEBERÁS ACTIVAR\n"
+          bot_retorno+="BOTGEN DE FORMA MANUAL DESPUES...\n"
+          sleep 1
+          bot_retorno+="Reiniciando servidor VPS\n"
+          bot_retorno+="$LINE\n"
+msj_fun
+sleep 2
+reboot
+}
