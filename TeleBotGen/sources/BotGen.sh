@@ -11,16 +11,16 @@ echo "$IP" > /usr/bin/vendor_code
 function_verify () {
 echo -e "verificando..."
  check_ip
-  permited=$(curl -sSL "https://raw.githubusercontent.com/Razhiel2019/bgn/main/TeleBotGen/Control/Control-Bot")
+  permited=$(curl -sSL "https://raw.githubusercontent.com/ADM-PERU/MGRBOT/main/TeleBotGen/Control/Control-Bot")
   [[ $(echo $permited|grep "${IP}") = "" ]] && {
   clear
   echo -e "\n\n\n\e[31m====================================================="
-  echo -e "\e[31m      ¡LA IP $(wget -qO- ipv4.icanhazip.com) NO ESTA AUTORIZADA!\n     SI DESEAS USAR EL BOTGEN CONTACTE A @RAZHIEL"
+  echo -e "\e[31m      ¡LA IP $(wget -qO- ipv4.icanhazip.com) NO ESTA AUTORIZADA!\n     SI DESEAS USAR EL BOTGEN CONTACTE A @GHOST"
   echo -e "\e[31m=====================================================\n\n\n\e[0m"
   exit 1
   } || {
   ### INTALAR VERCION DE SCRIPT
-  v1=$(curl -sSL "https://raw.githubusercontent.com/Razhiel2019/bgn/main/Vercion")
+  v1=$(curl -sSL "https://raw.githubusercontent.com/ADM-PERU/MGRBOT/main/Vercion")
   echo "$v1" > /etc/ADM-db/vercion
   }
 }
@@ -33,7 +33,7 @@ SRC="${CIDdir}/sources" && [[ ! -d ${SRC} ]] && mkdir ${SRC}
 CID="${CIDdir}/User-ID" && [[ ! -e ${CID} ]] && echo > ${CID}
 keytxt="${CIDdir}/keys" && [[ ! -d ${keytxt} ]] && mkdir ${keytxt}
 [[ $(dpkg --get-selections|grep -w "jq"|head -1) ]] || apt-get install jq -y &>/dev/null
-[[ ! -e "/bin/ShellBot.sh" ]] && wget -O /bin/ShellBot.sh https://raw.githubusercontent.com/Razhiel2019/bgn/main/ShellBot.sh &> /dev/null
+[[ ! -e "/bin/ShellBot.sh" ]] && wget -O /bin/ShellBot.sh https://raw.githubusercontent.com/ADM-PERU/MGRBOT/main/ShellBot.sh &> /dev/null
 [[ -e /etc/texto-bot ]] && rm /etc/texto-bot
 LINE=" ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••"
 
@@ -126,7 +126,7 @@ upfile_fun () {
 
 invalido_fun () {
 	[[ ! -z ${callback_query_message_chat_id[$id]} ]] && var=${callback_query_message_chat_id[$id]} || var=${message_chat_id[$id]}
-local bot_retorno="  🛠 𝙱𝚘𝚝𝙶𝚎𝚗  ADM-OS SYSTEM  🛠\n"
+local bot_retorno="  𝙱𝚘𝚝𝙶𝚎𝚗  MGRBOT ADM-PERU \n"
 	 bot_retorno+="$LINE\n"
          bot_retorno+="𝙲𝚘𝚖𝚊𝚗𝚍𝚘 𝙸𝚗𝚟𝚊𝚕𝚒𝚍𝚘!! 𝚃𝚎𝚌𝚕𝚎𝚊 /𝚊𝚢𝚞𝚍𝚊 𝚙𝚊𝚛𝚊 𝙲𝚘𝚗𝚘𝚌𝚎𝚛 𝚕𝚘𝚜 𝙿𝚊𝚜𝚘𝚜! \n O Contacta a $(cat < /etc/ADM-db/resell) \n"
          bot_retorno+="$LINE\n"
@@ -165,15 +165,14 @@ ShellBot.InlineKeyboardButton --button 'botao_conf' --line 1 --text 'ID' --callb
 
 ShellBot.InlineKeyboardButton --button 'botao_conf' --line 2 --text 'ON/OFF' --callback_data '/power'
 ShellBot.InlineKeyboardButton --button 'botao_conf' --line 2 --text 'MENU' --callback_data '/menu'
-ShellBot.InlineKeyboardButton --button 'botao_conf' --line 3 --text 'DONAR' --callback_data '/donar'
 
 ShellBot.InlineKeyboardButton --button 'botao_conf' --line 3 --text 'GENERAR KEY' --callback_data '/keygen'
 ShellBot.InlineKeyboardButton --button 'botao_user' --line 1 --text 'GENERAR KEY' --callback_data '/keygen'
-ShellBot.InlineKeyboardButton --button 'botao_user' --line 2 --text '💰 DONAR 💰' --callback_data  '1' --url 'https://paypal.me/RazhielMF?locale.x=es_XC'
-ShellBot.InlineKeyboardButton --button 'botao_user' --line 2 --text ' Contacto 📲' --callback_data  '1' --url 'https://t.me/RZHLM'
+ShellBot.InlineKeyboardButton --button 'botao_user' --line 2 --text '💰 DONAR 💰' --callback_data  '1' --url 'https://paypal.me/Ghost?locale.x=es_XC'
+ShellBot.InlineKeyboardButton --button 'botao_user' --line 2 --text ' Contacto 📲' --callback_data  '1' --url 'https://t.me/GHOST'
 
-ShellBot.InlineKeyboardButton --button 'botao_donar' --line 2 --text 'Donar Paypal' --callback_data '1' --url 'https://paypal.me/RazhielMF?locale.x=es_XC '
-ShellBot.InlineKeyboardButton --button 'botao_donar' --line 2 --text 'ACCEDER TELEGRAM' --callback_data '1' --url 'https://t.me/RZHLM'
+ShellBot.InlineKeyboardButton --button 'botao_donar' --line 2 --text 'Donar Paypal' --callback_data '1' --url 'https://paypal.me/GHOST?locale.x=es_XC '
+ShellBot.InlineKeyboardButton --button 'botao_donar' --line 2 --text 'ACCEDER TELEGRAM' --callback_data '1' --url 'https://t.me/GHOST'
 
 # Ejecutando escucha del bot
 while true; do
