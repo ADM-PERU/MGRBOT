@@ -9,29 +9,31 @@ echo "$IP" > /usr/bin/vendor_code
 }
 
 function_verify () {
-#check_ip
-  permited=$(curl -sSL "https://raw.githubusercontent.com/ADM-PERU/MGRBOT/main/TeleBotGen/Control/Control-Bot")
+  permited=$(curl -sSL "https://raw.githubusercontent.com/ChumoGH/VPSbot/main/TeleBotGen/Control/Control-Bot")
   [[ $(echo $permited|grep "${IP}") = "" ]] && {
   clear
   echo -e "\n\n\n\e[31m====================================================="
-  echo -e "\e[31m      ¡LA IP $(wget -qO- ipv4.icanhazip.com) NO ESTA AUTORIZADA!"
+  echo -e "\e[31m      ¡LA IP $(wget -qO- ipv4.icanhazip.com) NO ESTA AUTORIZADA!\n     SI DESEAS USAR EL BOTGEN CONTACTE A @ChumoGH"
   echo -e "\e[31m=====================================================\n\n\n\e[0m"
   exit 1
   } || {
   ### INTALAR VERCION DE SCRIPT
-  v1=$(curl -sSL "https://raw.githubusercontent.com/ADM-PERU/MGRBOT/main/TeleBotGen/Vercion.log")
+  v1=$(curl -sSL "https://www.dropbox.com/s/blxo0jifysvyrey/v-new.log")
   echo "$v1" > /etc/ADM-db/vercion
   }
 }
 
+#check_ip
+#function_verify
+  
 CIDdir=/etc/ADM-db && [[ ! -d ${CIDdir} ]] && mkdir ${CIDdir}
 SRC="${CIDdir}/sources" && [[ ! -d ${SRC} ]] && mkdir ${SRC}
 CID="${CIDdir}/User-ID" && [[ ! -e ${CID} ]] && echo > ${CID}
 keytxt="${CIDdir}/keys" && [[ ! -d ${keytxt} ]] && mkdir ${keytxt}
 [[ $(dpkg --get-selections|grep -w "jq"|head -1) ]] || apt-get install jq -y &>/dev/null
-[[ ! -e "/bin/ShellBot.sh" ]] && wget -O /bin/ShellBot.sh https://raw.githubusercontent.com/ADM-PERU/MGRBOT/main/ShellBot.sh &> /dev/null
+[[ ! -e "/bin/ShellBot.sh" ]] && wget -O /bin/ShellBot.sh https://raw.githubusercontent.com/ChumoGH/VPSbot/main/ShellBot.sh &> /dev/null
 [[ -e /etc/texto-bot ]] && rm /etc/texto-bot
-LINE="==================================="
+LINE=" ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••"
 
 # Importando API
 source ShellBot.sh
@@ -121,8 +123,9 @@ upfile_fun () {
 
 invalido_fun () {
 	[[ ! -z ${callback_query_message_chat_id[$id]} ]] && var=${callback_query_message_chat_id[$id]} || var=${message_chat_id[$id]}
-local bot_retorno="$LINE\n"
-         bot_retorno+="Comando invalido!, Digita /Ayuda para ver los Cmd Validos\n"
+local bot_retorno="  🎊 𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘  𝚊𝚕  𝙱𝚘𝚝𝙶𝚎𝚗  𝙲𝚑𝚞𝚖𝚘𝙶𝙷-𝙰𝙳𝙼  🎊\n"
+	 bot_retorno+="$LINE\n"
+         bot_retorno+="𝙲𝚘𝚖𝚊𝚗𝚍𝚘 𝙸𝚗𝚟𝚊𝚕𝚒𝚍𝚘!! 𝚃𝚎𝚌𝚕𝚎𝚊 /𝚊𝚢𝚞𝚍𝚊 𝚙𝚊𝚛𝚊 𝙲𝚘𝚗𝚘𝚌𝚎𝚛 𝚕𝚘𝚜 𝙿𝚊𝚜𝚘𝚜! \n O Contacta a $(cat < /etc/ADM-db/resell) \n"
          bot_retorno+="$LINE\n"
 	     ShellBot.sendMessage --chat_id $var \
 							--text "<i>$(echo -e $bot_retorno)</i>" \
@@ -132,7 +135,7 @@ local bot_retorno="$LINE\n"
 
 msj_fun () {
 	[[ ! -z ${callback_query_message_chat_id[$id]} ]] && var=${callback_query_message_chat_id[$id]} || var=${message_chat_id[$id]}
-	      ShellBot.sendMessage --chat_id $var \
+		      ShellBot.sendMessage --chat_id $var \
 							--text "<i>$(echo -e "$bot_retorno")</i>" \
 							--parse_mode html
 	return 0
@@ -152,20 +155,22 @@ botao_conf=''
 botao_user=''
 botao_donar=''
 
-ShellBot.InlineKeyboardButton --button 'botao_conf' --line 1 --text 'add' --callback_data '/add'
-ShellBot.InlineKeyboardButton --button 'botao_conf' --line 1 --text 'del' --callback_data '/del'
-ShellBot.InlineKeyboardButton --button 'botao_conf' --line 1 --text 'list' --callback_data '/list'
+ShellBot.InlineKeyboardButton --button 'botao_conf' --line 1 --text 'Añadir' --callback_data '/add'
+ShellBot.InlineKeyboardButton --button 'botao_conf' --line 1 --text 'Del' --callback_data '/del'
+ShellBot.InlineKeyboardButton --button 'botao_conf' --line 1 --text 'List' --callback_data '/list'
 ShellBot.InlineKeyboardButton --button 'botao_conf' --line 1 --text 'ID' --callback_data '/ID'
 
-ShellBot.InlineKeyboardButton --button 'botao_conf' --line 2 --text 'power' --callback_data '/power'
-ShellBot.InlineKeyboardButton --button 'botao_conf' --line 2 --text 'menu' --callback_data '/menu'
+ShellBot.InlineKeyboardButton --button 'botao_conf' --line 2 --text 'ON/OFF' --callback_data '/power'
+ShellBot.InlineKeyboardButton --button 'botao_conf' --line 2 --text 'MENU' --callback_data '/menu'
 
-ShellBot.InlineKeyboardButton --button 'botao_conf' --line 3 --text 'keygen' --callback_data '/keygen'
-ShellBot.InlineKeyboardButton --button 'botao_user' --line 1 --text 'keygen' --callback_data '/keygen'
+ShellBot.InlineKeyboardButton --button 'botao_conf' --line 3 --text 'GENERAR KEY' --callback_data '/keygen'
+ShellBot.InlineKeyboardButton --button 'botao_user' --line 1 --text 'GENERAR KEY' --callback_data '/keygen'
+ShellBot.InlineKeyboardButton --button 'botao_user' --line 2 --text '💰 DONAR 💰' --callback_data  '1' --url 'https://www.paypal.me/ChumoGH'
+ShellBot.InlineKeyboardButton --button 'botao_user' --line 2 --text ' Contacto 📲' --callback_data  '1' --url 'https://wa.me/593987072611'
 
-ShellBot.InlineKeyboardButton --button 'botao_donar' --line 1 --text 'Donar Paypal' --callback_data '1' --url 'https://www.paypal.me/Razhiel'
-#ShellBot.InlineKeyboardButton --button 'botao_donar' --line 2 --text 'Donar MercadoPago ARG' --callback_data '1' --url 'http://mpago.li/1SAHrwu'
-ShellBot.InlineKeyboardButton --button 'botao_donar' --line 3 --text 'Acortador adf.ly' --callback_data '1' --url 'http://caneddir.com/2J9J'
+#ShellBot.InlineKeyboardButton --button 'botao_user' --line 2 --text ' Contacto 📲' --callback_data  '1' --url 'https://wa.me/593987072611?text=Hola!,%20ℂ𝕙𝕦𝕞𝕠𝔾ℍ%20Me%20interesa%20Conocer%20más%20sobre%20el%20ADM.'
+ShellBot.InlineKeyboardButton --button 'botao_donar' --line 2 --text 'Donar Paypal' --callback_data '1' --url 'https://www.paypal.me/ChumoGH'
+ShellBot.InlineKeyboardButton --button 'botao_donar' --line 2 --text 'ACCEDER WHATSAPP' --callback_data '1' --url 'https://wa.me/593987072611'
 
 # Ejecutando escucha del bot
 while true; do
