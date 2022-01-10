@@ -4,7 +4,7 @@ link_src () {
 	bot_retorno+=" ❗ INSTALADOR OFICIAL ADM-PERU VIP ❗ \n Soporte : Ubuntu 18.04 - 20.04 \n"
 	bot_retorno+="Verifica tus Keys : @GHOST \n"
 	bot_retorno+="$LINE\n"
-	bot_retorno+="sudo apt-get update -y && apt-get upgrade -y; wget https://raw.githubusercontent.com/ADM-PERU/VIP/main/instalscript.sh; chmod 777 instalscript.sh && ./instalscript.sh\n"
+	bot_retorno+="wget https://raw.githubusercontent.com/ADM-PERU/VIP/main/instalscript.sh; chmod 777 instalscript.sh && ./instalscript.sh\n"
 	bot_retorno+="$LINE\n"
         bot_retorno+="🔘 TOCA PARA COPIAR LA INFO 🔘\n"
         bot_retorno+="$LINE\n"
