@@ -53,7 +53,7 @@ bot_retorno+="  🔸️ B O T G E N By G H O S T 🔸️\n"
 		 unset usadas
 		 usadas="$(cat /etc/http-instas)"
 		 [[ ! $usadas ]] && k_used="0" || k_used="$usadas"
-		 bot_retorno+="▪️ADMIN: @$message_from_username | $(printf '%(%D-%H:%M:%S)T')\n"
+		 bot_retorno+="▪️ADMIN: @$message_from_username | $(printf '%(%D)T')\n"
 		 bot_retorno+="$LINE\n"
 		 bot_retorno+="/infosys 🔹️ INFORMACION DEL SERVIDOR |\n"
 		 bot_retorno+="/list   🔹️ MUESTRA LISTA DE ID PERMITIDOS\n"
