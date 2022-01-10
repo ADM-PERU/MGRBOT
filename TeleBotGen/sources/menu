@@ -4,7 +4,8 @@ text1=$(source trans -b pt:${tr} "MENU DE COMANDOS ")
 text2=$(source trans -b pt:${tr} "INSTRUCCIONES DE COMANDOS ")
 
 menu_src () {
-bot_retorno=" 🔸️ BOTGEN By GHOST 🔸️\n"
+bot_retorno="$LINE\n"
+bot_retorno+="  🔸️ B O T G E N By G H O S T 🔸️\n"
 	 if [[ $(echo $permited|grep "${chatuser}") = "" ]]; then
 		 if [[ $(cat ${CID}|grep "${chatuser}") = "" ]]; then
 		 	 bot_retorno+="$LINE\n"
@@ -52,10 +53,10 @@ bot_retorno=" 🔸️ BOTGEN By GHOST 🔸️\n"
 		 unset usadas
 		 usadas="$(cat /etc/http-instas)"
 		 [[ ! $usadas ]] && k_used="0" || k_used="$usadas"
-		 bot_retorno+="ADMIN: @$message_from_username"
+		 bot_retorno+="▪️ADMIN: @$message_from_username | $(printf '%(%D-%H:%M:%S)T')\n"
 		 bot_retorno+="$LINE\n"
 		 bot_retorno+="/infosys 🔹️ INFORMACION DEL SERVIDOR |\n"
-		 bot_retorno+="/list 🔹️ MUESTRA LISTA DE ID PERMITIDOS\n"
+		 bot_retorno+="/list   🔹️ MUESTRA LISTA DE ID PERMITIDOS\n"
 		 bot_retorno+="/instal 🔹️ INSTALADOR OFICIAL |\n"
 		 bot_retorno+="/menu 🔹️ MENU DE ACCIONES |\n"
 		 bot_retorno+="/ayuda 🔹️ INSTRUCCIONES DE COMANDOS |\n"
