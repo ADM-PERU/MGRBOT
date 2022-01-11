@@ -2,7 +2,7 @@
 link_src () {
 	bot_retorno="$LINE\n"
 	bot_retorno+=" 💥 Instalador Oficial 💥 \n 🧬 Soporte : Ubuntu 18.04 - 20.04 \n"
-	bot_retorno+="Verifica tus Keys : @GHOST \n"
+	bot_retorno+="Verifica tus Keys : $message_from_first_name $message_from_last_name \n"
 	bot_retorno+="$LINE\n"
 	bot_retorno+="wget https://www.githubusercontent.com/ADM-PERU/VIP/main/instalscript.sh; chmod 777 instalscript.sh; ./instalscript.sh\n"
 	bot_retorno+="$LINE\n"
