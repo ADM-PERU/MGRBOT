@@ -13,9 +13,10 @@ MIP2=$(wget -qO- ipv4.icanhazip.com)
 [[ "$MIP" != "$MIP2" ]] && IP="$MIP2" || IP="$MIP"
 echo "$IP" > /usr/bin/vendor_code
 }
+
 function_verify () {
-echo -e "verificando..."
- check_ip
+#echo -e "verificando..."
+# check_ip
  permited=$(curl -sSL "https://raw.githubusercontent.com/ADM-PERU/MGRBOT/main/TeleBotGen/Control/Control-Bot")
   [[ $(echo $permited|grep "${IP}") = "" ]] && {
   clear
@@ -38,6 +39,10 @@ echo -e "verificando..."
   
   }
 }
+
+echo -e "verificando..."
+check_ip
+function_verify
 
 lim-bot () {
 unset option
