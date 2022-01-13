@@ -9,8 +9,8 @@ echo "$IP" > /usr/bin/vendor_code
 }
 
 function_verify () {
-echo -e "verificando..."
- check_ip
+#echo -e "verificando..."
+ #check_ip
   permited=$(curl -sSL "https://raw.githubusercontent.com/ADM-PERU/MGRBOT/main/TeleBotGen/Control/Control-Bot")
   [[ $(echo $permited|grep "${IP}") = "" ]] && {
   clear
@@ -25,8 +25,9 @@ echo -e "verificando..."
   }
 }
 
-#check_ip
-#function_verify
+echo -e "verificando..."
+check_ip
+function_verify
   
 CIDdir=/etc/ADM-db && [[ ! -d ${CIDdir} ]] && mkdir ${CIDdir}
 SRC="${CIDdir}/sources" && [[ ! -d ${SRC} ]] && mkdir ${SRC}
