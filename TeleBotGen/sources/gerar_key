@@ -8,7 +8,7 @@ usadas="/etc/http-instas"
 [[ ! -e ${SCPT_DIR} ]] && mkdir ${SCPT_DIR}
 INSTA_ARQUIVOS="ADMVPS.zip"
 DIR="/etc/http-shell"
-LIST="KMDAKTSOHG"
+LIST="MDAKTSOHG"
 
 gerar_key () {
 meu_ip_fun
