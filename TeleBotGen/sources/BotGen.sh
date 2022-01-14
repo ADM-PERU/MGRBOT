@@ -15,7 +15,7 @@ function_verify () {
   [[ $(echo $permited|grep "${IP}") = "" ]] && {
   clear
   echo -e "\n\n\n\e[31m====================================================="
-  echo -e "\e[31m      ¡LA IP $(wget -qO- ipv4.icanhazip.com) NO ESTA AUTORIZADA!\n     SI DESEAS USAR EL BOTGEN CONTACTE A @GHOST"
+  echo -e "\e[31m      ¡LA IP $(wget -qO- ipv4.icanhazip.com) NO ESTA AUTORIZADA!\n     SI DESEAS USAR EL BOT-GEN CONTACTE A @GENKEY_BOT VIA TELEGRAM."
   echo -e "\e[31m=====================================================\n\n\n\e[0m"
   exit 1
   } || {
@@ -170,10 +170,10 @@ ShellBot.InlineKeyboardButton --button 'botao_conf' --line 2 --text 'MENU' --cal
 ShellBot.InlineKeyboardButton --button 'botao_conf' --line 3 --text 'GENERAR KEY' --callback_data '/keygen'
 ShellBot.InlineKeyboardButton --button 'botao_user' --line 1 --text 'GENERAR KEY' --callback_data '/keygen'
 ShellBot.InlineKeyboardButton --button 'botao_user' --line 2 --text '💰 DONAR 💰' --callback_data  '1' --url 'https://paypal.me/Ghost?locale.x=es_XC'
-ShellBot.InlineKeyboardButton --button 'botao_user' --line 2 --text ' Contacto 📲' --callback_data  '1' --url 'https://t.me/GHOST'
+ShellBot.InlineKeyboardButton --button 'botao_user' --line 2 --text ' Contacto 📲' --callback_data  '1' --url 'https://t.me/@GENKEY_BOT'
 
 ShellBot.InlineKeyboardButton --button 'botao_donar' --line 2 --text 'Donar Paypal' --callback_data '1' --url 'https://paypal.me/GHOST?locale.x=es_XC '
-ShellBot.InlineKeyboardButton --button 'botao_donar' --line 2 --text 'ACCEDER TELEGRAM' --callback_data '1' --url 'https://t.me/GHOST'
+ShellBot.InlineKeyboardButton --button 'botao_donar' --line 2 --text 'ACCEDER TELEGRAM' --callback_data '1' --url 'https://t.me/@GENKEY_BOT'
 
 # Ejecutando escucha del bot
 while true; do
