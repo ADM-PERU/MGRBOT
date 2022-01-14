@@ -103,7 +103,7 @@ done
 [[ -e /root/token ]] && mv /root/token /etc/ADM-db/token 
 [[ -e /root/Admin-ID ]] && mv /root/Admin-ID /etc/ADM-db/Admin-ID 
 [[ -e /root/User-ID ]] && mv /root/User-ID /etc/ADM-db/User-ID 
-echo "Restaurando Token y ADMINISTRADOR"
+echo "CARGANDO PANEL ADMINISTRATIVO..."
  rm $HOME/lista-arq
  read -p "Presiona Enter para continuar"
  bot_gen
