@@ -36,7 +36,7 @@ function_verify () {
   CIDdir=/etc/ADM-db && [[ ! -d ${CIDdir} ]] && mkdir ${CIDdir}
   v1=$(curl -sSL "https://raw.githubusercontent.com/ADM-PERU/MGRBOT/main/Vercion")
   echo "$v1" > /etc/ADM-db/vercion
-  echo "@RAZHIEL" > ${CIDdir}/resell
+  echo "@GENKEY_BOT" > ${CIDdir}/resell
   
   }
 }
