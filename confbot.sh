@@ -32,6 +32,7 @@ function_verify () {
   echo -e "\n\n\n\e[32m====================================================="
   echo -e "\e[32m      ¡LA IP $(wget -qO- ipv4.icanhazip.com) ESTA AUTORIZADA!\n       USTED A SIDO AUTORIZADO CORRECTAMENTE PARA EL USO DEL BOT-GEN."
   echo -e "\e[32m=====================================================\n\n\n\e[0m"
+  sleep 2
   CIDdir=/etc/ADM-db && [[ ! -d ${CIDdir} ]] && mkdir ${CIDdir}
   v1=$(curl -sSL "https://raw.githubusercontent.com/ADM-PERU/MGRBOT/main/Vercion")
   echo "$v1" > /etc/ADM-db/vercion
