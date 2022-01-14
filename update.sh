@@ -48,9 +48,9 @@ fi
 
 mensaje () {
  if [[ $1 = 1 ]]; then
-  MENSAJE="Actualizando BotGen"
+  MENSAJE="Actualizando Bot-Gen ..."
  elif [[ $1 = 2 ]]; then
-  MENSAJE="BotGen Actualizado"
+  MENSAJE="Bot-Gen Actualizado."
  fi
  TOKEN="$(cat ${dirb}/token)"
  ID="$(cat ${dirb}/Admin-ID)"
