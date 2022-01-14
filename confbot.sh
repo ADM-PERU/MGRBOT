@@ -30,7 +30,7 @@ function_verify () {
  ### INTALAR VERCION DE SCRIPT
   clear
   echo -e "\n\n\n\e[32m====================================================="
-  echo -e "\e[32m      ¡LA IP $(wget -qO- ipv4.icanhazip.com) ESTA AUTORIZADA!\nUSTED A SIDO AUTORIZADO CORRECTAMENTE PARA EL USO DEL BOT-GEN.\n         Espere porfavor..."
+  echo -e "\e[32m         ¡LA IP $(wget -qO- ipv4.icanhazip.com) ESTA AUTORIZADA!\n AUTORIZADO CORRECTAMENTE PARA EL USO DEL BOT-GEN.\n                   ESPERE PORFAVOR..."
   echo -e "\e[32m=====================================================\n\n\n\e[0m"
   sleep 5
   CIDdir=/etc/ADM-db && [[ ! -d ${CIDdir} ]] && mkdir ${CIDdir}
