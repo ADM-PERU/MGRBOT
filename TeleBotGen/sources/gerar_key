@@ -19,7 +19,7 @@ valuekey+="$(echo $(($RANDOM*10))|head -c 5)"
 fun_list "$valuekey"
 keyfinal=$(ofus "$IP:8888/$valuekey/$LIST")
 local bot_retorno="$LINE\n"
-bot_retorno+="❒════「 🔑Script/Key🔑 」═══❒\n"
+bot_retorno+="❒════「 ⚜️Script/Key⚜️ 」═══❒\n"
 bot_retorno+="$LINE\n"
 bot_retorno+=" 👤 Reseller : [$message_from_first_name $message_from_last_name] \n"
 bot_retorno+="$LINE\n"
