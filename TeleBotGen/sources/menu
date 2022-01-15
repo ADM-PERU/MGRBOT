@@ -23,7 +23,7 @@ bot_retorno+="  🔸️ B O T G E N By G H O S T 🔸️\n"
 			 bot_retorno+="$LINE\n"
 			 msj_fun
 		 else
-		 	[[ -e /etc/menu_ito ]] && nomkey="$(cat /etc/menu_ito)" || nomkey="$(curl -sSL "https://raw.githubusercontent.com/Razhiel2019/BTPRO/main/TeleBotGen/Control/menu_credit")"
+		 	[[ -e /etc/menu_ito ]] && nomkey="$(cat /etc/menu_ito)" || nomkey="$(curl -sSL "https://raw.githubusercontent.com/ADM-PERU/MGRBOT/main/TeleBotGen/Control/menu_credit")"
 		 	numkey_used=$(grep -o -i $message_chat_id /etc/gerar-sh-log | wc -l)
 			numkey_gen=$(grep -o -i $message_chat_id /etc/ADM-db/num-key.cont | wc -l)
 			bot_retorno+="$LINE\n"
