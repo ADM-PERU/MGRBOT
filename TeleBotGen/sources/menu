@@ -19,7 +19,7 @@ bot_retorno+="  🔸️ B O T G E N By G H O S T 🔸️\n"
 			 bot_retorno+="/menu  | $text1\n"
 			 bot_retorno+="/ayuda | $text2\n"
 			 bot_retorno+="$LINE\n"
-			 bot_retorno+="Si tienes inconvenientes con el BotGEN \n Contactame : @GHOST\n"
+			 bot_retorno+="Si tienes inconvenientes con el BotGEN \n Contactame : @GENKEY_BOT"
 			 bot_retorno+="$LINE\n"
 			 msj_fun
 		 else
@@ -38,7 +38,7 @@ bot_retorno+="  🔸️ B O T G E N By G H O S T 🔸️\n"
 			 bot_retorno+="/menu   ►  𝘔𝘦𝘯𝘶 𝘥𝘦 𝘊𝘰𝘮𝘢𝘯𝘥𝘰𝘴 𝘋𝘪𝘴𝘱𝘰𝘯𝘪𝘣𝘭𝘦𝘴 | \n"
 			 bot_retorno+="/ayuda  ►  Ayuda/Instrucciones 𝘥𝘦𝘭 𝘔𝘌𝘕𝘜 |\n"
 			 bot_retorno+=" ❊ 𝚁𝚎𝚌𝚞𝚎𝚛𝚍𝚊 𝙲𝚘𝚕𝚊𝚋𝚘𝚛𝚊𝚛 💸💰 , 𝚜𝚒 𝚝𝚎 𝚊𝚐𝚛𝚊𝚍𝚘 𝚖𝚒 𝚃𝚛𝚊𝚋𝚊𝚓𝚘 ❊\n"
-			 bot_retorno+="Si tienes inconvenientes con el Bot  🎁 Contactame t.me : @GHOST 📲\n"
+			 bot_retorno+="Si tienes inconvenientes con el Bot  🎁 Contactame t.me : @GENKEY_BOT 📲\n"
 			 bot_retorno+=" 🔐 『 $numkey_used 』𝙆𝙚𝙮𝙨 𝙐𝙨𝙖𝙙𝙖𝙨 🔓,『 $numkey_gen 』𝙆𝙚𝙮𝙨 𝙂𝙚𝙣𝙚𝙧𝙖𝙙𝙖𝙨 🗝️ \n"
 			 bot_retorno+="$LINE\n"
 			 menu_print
