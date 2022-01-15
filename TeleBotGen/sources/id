@@ -4,10 +4,10 @@ idirect="/etc/idir" && [[ ! -d $idirect ]] && mkdir $idirect
 
 myid_src () {
 [[ $(cat ${CID}|grep "${chatuser}" ) = "" ]] && {
-bot_retorno="====================\n"
+bot_retorno="=======================================\n"
           bot_retorno+="👋 Hola $message_from_first_name $message_from_last_name .\n"
           bot_retorno+="=======================================\n"
-          bot_retorno+="Su ID :\n <code>${chatuser}</code> ↗️ TOCA PARA COPIAR EN EL ID.\n"
+          bot_retorno+="Su ID :\n <code>${chatuser}</code> \n ↗️ TOCA PARA COPIAR EN EL ID.\n"
           bot_retorno+="=======================================\n"
 msj_fun
 } || {
