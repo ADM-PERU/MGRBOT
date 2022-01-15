@@ -9,7 +9,7 @@ bot_retorno="====================\n"
            bot_retorno+="=======================================\n"
           bot_retorno+="Su ID 【 ${chatuser} 】\n"
           bot_retorno+="=======================================\n"
-          bot_retorno+="Para estar Autorizado, Realiza su pago\n y adjunte su ID a https://www.paypal.me/RazhielMF\n"
+          bot_retorno+="Para estar Autorizado, Realiza su pago\n y adjunte su ID a https://www.paypal.me/GHOST\n"
           bot_retorno+="=======================================\n"
 msj_fun
 } || {
@@ -48,14 +48,14 @@ addID_reply () {
           bot_retorno+="$LINE"
 
           bot_retor="  🎊Bienvenido Nuevamente🎊\n"
-          bot_retor+="Hola 『 $message_from_first_name $message_from_last_name 』\n"
+          bot_retor+=" Hola 『 $message_from_first_name $message_from_last_name 』\n"
           bot_retor+="✅ El Administrador $(cat < /etc/ADM-db/resell) te autorizo Acceso por 30 dias ✅\n"
-          bot_retor+="Para GENERAR Key's usar el comando /Keygen\n"
+          bot_retor+=" Para GENERAR Key's usar el comando /Keygen\n"
           bot_retor+="$LINE\n"
-          bot_retor+="Recuerda adquirir creditos, o Realizar una Colaboracion\n Paypal : https://www.paypal.me/RazhielMF\n"
+          bot_retor+=" Recuerda adquirir creditos, o Realizar una Colaboracion\n Paypal : https://www.paypal.me/GHOST\n"
           #bot_retor+="Si tienes inconvenientes con el BotGen \n Contactame : $(cat < /etc/ADM-db/resell)\n"
-          bot_retor+="Si tienes inconvenientes con el Bot \n Contactame : @RZHLM\n"
-          bot_retor+="Para mantener tu acceso al Bot Recuerda adjuntar tu ID\n"
+          bot_retor+=" Si tienes inconvenientes con el Bot \n Contactame : @GHOST\n"
+          bot_retor+=" Para mantener tu acceso al Bot Recuerda adjuntar tu ID\n"
           bot_retor+="$LINE\n"
       msj_fun
       msj_add ${message_text[$id]}
