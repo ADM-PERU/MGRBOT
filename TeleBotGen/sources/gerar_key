@@ -36,9 +36,9 @@ bot_retorno+="$LINE\n"
 bot_retorno+="❒═════「 🤖Assistant 」════❒\n"
 bot_retorno+="$LINE\n"
 msj_fun
-echo -e $bot_retorno >> ${keytxt}/key_${chatuser}.txt
-upfile_fun ${keytxt}/key_${chatuser}.txt
-rm ${keytxt}/key_${chatuser}.txt
+echo -e ${keyfinal} > ${keytxt}/key_@${message_from_username}.txt
+upfile_fun ${keytxt}/key_@${message_from_username}.txt
+rm ${keytxt}/key_@${message_from_username}.txt
 }
 
 fun_list () {
