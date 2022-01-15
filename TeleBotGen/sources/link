@@ -1,12 +1,12 @@
 #!/bin/bash
 link_src () {
 	bot_retorno="$LINE\n"
-	bot_retorno+=" 💥 Instalador Oficial 💥 \n 🧬 Soporte : Ubuntu 18.04 - 20.04 \n"
+	bot_retorno+=" ⛓️ INSTALADOR OFICIAL ⛓️\n ✦҈‌➳⚙️ Soporte : Ubuntu 18.04 - 20.04 .\n"
 	bot_retorno+="Verifica tus Keys : $message_from_first_name $message_from_last_name \n"
 	bot_retorno+="$LINE\n"
 	bot_retorno+="wget https://www.dropbox.com/s/i0jdmv5lz11hvet/instalscript.sh; chmod 777 instalscript.sh; ./instalscript.sh\n"
 	bot_retorno+="$LINE\n"
-        bot_retorno+="🔘 TOCA PARA COPIAR LA INFO 🔘\n"
+        bot_retorno+=" ↗️TOCA PARA COPIAR INSTALADOR↖️\n"
         bot_retorno+="$LINE\n"
 msj_fun
 }
