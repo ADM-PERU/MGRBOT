@@ -127,9 +127,9 @@ upfile_fun () {
 
 invalido_fun () {
 	[[ ! -z ${callback_query_message_chat_id[$id]} ]] && var=${callback_query_message_chat_id[$id]} || var=${message_chat_id[$id]}
-local bot_retorno="  𝙱𝚘𝚝𝙶𝚎𝚗  MGRBOT ADM-PERU \n"
+local bot_retorno="  🤖 BOT GENERADOR DE KEY.  \n"
 	 bot_retorno+="$LINE\n"
-         bot_retorno+="𝙲𝚘𝚖𝚊𝚗𝚍𝚘 𝙸𝚗𝚟𝚊𝚕𝚒𝚍𝚘!! 𝚃𝚎𝚌𝚕𝚎𝚊 /𝚊𝚢𝚞𝚍𝚊 𝚙𝚊𝚛𝚊 𝙲𝚘𝚗𝚘𝚌𝚎𝚛 𝚕𝚘𝚜 𝙿𝚊𝚜𝚘𝚜! \n O Contacta a $(cat < /etc/ADM-db/resell) \n"
+         bot_retorno+="Comando Invalido!!! \n Pulsa en /Ayuda para conocer los pasos. \n o contacta a : \n $(cat < /etc/ADM-db/resell) \n"
          bot_retorno+="$LINE\n"
 	     ShellBot.sendMessage --chat_id $var \
 							--text "<i>$(echo -e $bot_retorno)</i>" \
