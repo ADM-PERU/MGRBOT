@@ -5,9 +5,9 @@ idirect="/etc/idir" && [[ ! -d $idirect ]] && mkdir $idirect
 myid_src () {
 [[ $(cat ${CID}|grep "${chatuser}" ) = "" ]] && {
 bot_retorno="====================\n"
-          bot_retorno+="👋Hola  @$message_from_username . \n Tu ID esta autorizado para poder usar el BOTGEN.\n"
+          bot_retorno+="👋Hola  @$message_from_username . \n Tu ID no esta autorizado para poder usar el BOTGEN.\n"
            bot_retorno+="===========================================\n"
-          bot_retorno+="🆔 : <code>${chatuser}</code> \n    ↗️ TOCA PARA COPIAR↖️\n"
+          bot_retorno+="🆔 : <code>${chatuser}</code> \n    ↗️ TOCA PARA COPIAR.\n"
           bot_retorno+="===========================================\n"
           bot_retor="$LINE\n"
           bot_retor+=" Cliente『 $message_from_first_name $message_from_last_name 』\n"
@@ -23,7 +23,7 @@ msj_add "$(cat < ${CIDdir}/Admin-ID)"
 bot_retorno="====================\n"
           bot_retorno+="👋Hola @$message_from_username 】, Tu ID esta autorizado para poder usar el BOTGEN. \n"
            bot_retorno+="===========================================\n"
-          bot_retorno+="🆔 : <code>${chatuser}</code> \n    ↗️ TOCA PARA COPIAR↖️\n"
+          bot_retorno+="🆔 : <code>${chatuser}</code> \n    ↗️ TOCA PARA COPIAR.\n"
           bot_retorno+="===========================================\n"
 msj_fun
 }
