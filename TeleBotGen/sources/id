@@ -43,10 +43,10 @@ addID_reply () {
           bot_retorno+="New ID: ${message_text[$id]}\n"
           bot_retorno+="$LINE"
 
-          bot_retor="  🎊Bienvenido Nuevamente🎊\n"
+          bot_retorno+="  🎊 Bienvenido Nuevamente 🎊\n"
           bot_retorno+=" Hola 『 $message_from_first_name $message_from_last_name 』\n"
-          bot_retorno+="✅ El Administrador $(cat < /etc/ADM-db/resell) te autorizo Acceso por 30 dias ✅\n"
-          bot_retorno+=" Para GENERAR Key's usar el comando /Keygen\n"
+          bot_retorno+="✅ El Administrador $(cat < /etc/ADM-db/resell) te autorizo Acceso para usar BotGen ✅\n"
+          bot_retorno+=" Para GENERAR Key, debes usar el comando /Keygen\n"
           bot_retorno+=" Para ingresar al MENU usar el comando /menu\n"
           bot_retorno+="$LINE\n"
           bot_retorno+=" Recuerda adquirir creditos, o Realizar una Colaboracion\n Paypal : https://www.paypal.me/GHOST\n"
