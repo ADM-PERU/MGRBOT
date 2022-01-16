@@ -92,7 +92,7 @@ done
           bot_retor+="$LINE\n"
           bot_retor+="Recuerda adquirir creditos, o realizar una Colaboración:\n $(cat < /etc/mpayu)\n"
           bot_retor+="Si tienes inconvenientes con el BOTGEN \n Contactame : $(cat < /etc/ADM-db/resell)\n"
-          bot_retor+="Para mantener tu acceso al BOTGEN Recuerda Mostrar tu Token de Donacion o Compra\n"
+          bot_retor+="Para mantener tu acceso al BOTGEN Recuerda Mostrar tu Token de Donacion o Compra.\n"
           bot_retor+="$LINE\n"
       msj_fun
       msj_add ${ids}
