@@ -5,7 +5,7 @@ text2=$(source trans -b pt:${tr} "INSTRUCCIONES DE COMANDOS ")
 
 menu_src () {
 bot_retorno="$LINE\n"
-bot_retorno+="  🔸️ B O T G E N By G H O S T 🔸️\n"
+bot_retorno+="✦҈‌➳               ⚜️PANEL⚜️  \n"
 	 if [[ $(echo $permited|grep "${chatuser}") = "" ]]; then
 		 if [[ $(cat ${CID}|grep "${chatuser}") = "" ]]; then
 		 	 bot_retorno+="$LINE\n"
