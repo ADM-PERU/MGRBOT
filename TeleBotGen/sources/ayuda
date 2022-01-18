@@ -4,9 +4,9 @@ ayuda_src () {
 bot_retorno="  🤖Bienvenido  $message_from_first_name $message_from_last_name  al BOT GEN-KEY.\n"
 	 if [[ $(echo $permited|grep "${chatuser}") = "" ]]; then
 		 if [[ $(cat ${CID}|grep "${chatuser}") = "" ]]; then
-			 bot_retorno+="/ID\n Muestra su ID \n Para tener acceso al /Keygen\n Realize su pago $(cat < /etc/ADM-db/resell)\n"
+			 bot_retorno+="/ID\n Muestra su ID \n Para tener acceso al BOTGEN\n realize su pago $(cat < /etc/ADM-db/resell)\n"
 			 bot_retorno+="$LINE\n"
-			 bot_retorno+="(Boton) Keygen\n genera una key para\n el instalador del script\n para tener acceso\n deve enviar su ID al admin $(cat < /etc/ADM-db/resell)\n"
+			 bot_retorno+="/Keygen\n genera una key para\n el instalador del script\n para tener acceso\n deve enviar su ID al admin $(cat < /etc/ADM-db/resell)\n"
 			 bot_retorno+="$LINE\n"
 			 bot_retorno+="/menu\n muestra el menu\n de comandos disponibles\n"
 			 bot_retorno+="$LINE\n"
@@ -15,9 +15,9 @@ bot_retorno="  🤖Bienvenido  $message_from_first_name $message_from_last_name 
 			 bot_retorno+="/donar\n ayuda Voluntaria\n"
 			 bot_retorno+="$LINE\n"
 		 else
-			 bot_retorno+="/ID\n muestra sus ID de telegram\n para tener acceso al /keygen\n deve enviar su ID al admin $(cat < /etc/ADM-db/resell)\n"
+			 bot_retorno+="/ID\n muestra sus ID de telegram\n para tener acceso al BOTGEN\n debe enviar su ID al admin $(cat < /etc/ADM-db/resell)\n"
 			 bot_retorno+="$LINE\n"
-			 bot_retorno+="(Boton) Keygen\n genera una key para\n el instalador del script\n para tener acceso\n deve enviar su ID al admin $(cat < /etc/ADM-db/resell)\n"
+			 bot_retorno+="/Keygen\n genera una key para\n el instalador del script\n para tener acceso\n deve enviar su ID al admin $(cat < /etc/ADM-db/resell)\n"
 			 bot_retorno+="$LINE\n"
 			 bot_retorno+="/instal\n muestra el link de instalacion\n del script para usar sus key\n"
 			 bot_retorno+="$LINE\n"
