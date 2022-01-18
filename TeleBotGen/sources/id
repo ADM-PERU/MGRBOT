@@ -75,7 +75,7 @@ for i in $(cat /etc/ADM-db/User-ID | awk '{print $3}'); do
 [[ $(date -d $i +%s) -ge $(date -d $(date '+%C%y-%m-%d') +%s) ]] || {
 idlog=$(cat /etc/ADM-db/User-ID | grep "$i" | awk '{print $1}' | sed -e 's/[^a-z0-9 -]//ig')
 sed -i "/${idlog}/d" /etc/ADM-db/User-ID
-          bot_retor="  ✨ 𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘  nuevamente 𝚊𝚕  BOTGEN.\n"
+          bot_retor="  ✨ MENSAJE DE BOTGEN:\n"
           bot_retor+="Desafortunadamente tu membresia ha finalizado.\n"
           bot_retor+="Fecha de Corte : $i \n"
           bot_retor+="Si tienes dudas, contacta con: \n  $(cat < /etc/ADM-db/resell)\n"
