@@ -84,7 +84,7 @@ msj_add ${idlog}
 }
 done
           bot_retor="  ✨ 𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘  nuevamente 𝚊𝚕  BOTGEN.\n"
-          bot_retor+="El Administrador $(cat < /etc/ADM-db/resell) te autorizó.\n"
+          bot_retor+="El Administrador  $(cat < /etc/ADM-db/resell)  te autorizó.\n"
           bot_retor+="Autorización Valida Hasta : ${valid}\n"
           bot_retor+="Para GENERAR Key's usar el comando:\n/keygen\n"
           bot_retor+="Para MENU Digita el comando:\n/menu\n para actualizar el menu de comandos\n"
