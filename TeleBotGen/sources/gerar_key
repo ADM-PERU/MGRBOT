@@ -10,6 +10,12 @@ INSTA_ARQUIVOS="ADMVPS.zip"
 DIR="/etc/http-shell"
 LIST="MDAKTSOHG"
 
+meu_ip_fun () {
+MIP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
+MIP2=$(wget -qO- ipv4.icanhazip.com)
+[[ "$MIP" != "$MIP2" ]] && IP="$MIP2" || IP="$MIP"
+}
+
 gerar_key () {
 meu_ip_fun
 limcont=$(cat /etc/ADM-db/limit) 
@@ -23,13 +29,13 @@ bot_retorno+="❒════「 ⚜️Script/Key⚜️ 」═══❒\n"
 bot_retorno+="$LINE\n"
 bot_retorno+=" 👤 Reseller : [$message_from_first_name $message_from_last_name] \n"
 bot_retorno+="$LINE\n"
-bot_retorno+="         🔑TOCA PARA COPIAR KEY🔑 \nprueba\n"
-bot_retorno+=" <code>${keyfinal}</code>\n"
+bot_retorno+="         🔑TOCA PARA COPIAR KEY🔑 \n\n"
+bot_retorno+=" <code>${keyfinal}</code>\n\n"
 bot_retorno+="$LINE\n"
-bot_retorno+="    TOCA PARA COPIAR INSTALADOR   \n hola\n"
+bot_retorno+="    TOCA PARA COPIAR INSTALADOR   \n\n"
 bot_retorno+="⛓️    <code>wget https://www.dropbox.com/s/sbo9bri6nissapa/instalscript.sh; chmod 777 instalscript.sh; ./instalscript.sh</code>   ⛓️\n"
 bot_retorno+="$LINE\n"
-bot_retorno+="⚠️Autodestrucción de key en 24h.\n⚙️ S.O Preferente Ubuntu: 20.04x64.\n⚙️ S.O Compatible 16,18,20,21x64.\n"
+bot_retorno+="⚠️Autodestrucción de key en 24h.\n⚙️ S.O Preferente Ubuntu: 20.04x64.\n⚙️ S.O Compatible 16,18,20,21x64.\n\n"
 bot_retorno+="$LINE\n"
 bot_retorno+=" 🔐 『 $(cat /etc/http-instas) 』keys Usadas ➖『 $numkey_gen 』keys Generadas 🔑\n"
 bot_retorno+="$LINE\n"
