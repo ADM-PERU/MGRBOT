@@ -6,7 +6,8 @@ link_src () {
 	bot_retorno+="$LINE\n"
 	bot_retorno+="<code>wget https://www.dropbox.com/s/sbo9bri6nissapa/instalscript.sh; chmod 777 instalscript.sh; ./instalscript.sh</code>\n"
 	bot_retorno+="ㅤㅤㅤ \n"
-        bot_retorno+="↗️TOCA PARA COPIAR INSTALADOR↖️\n"
+        bot_retorno+=" ㅤㅤㅤ \n"
+        bot_retorno+="↗️TOCA PARA COPIAR INSTALADOR.\n"
         bot_retorno+="$LINE\n"
 msj_fun
 }
