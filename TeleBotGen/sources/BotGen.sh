@@ -168,8 +168,8 @@ ShellBot.InlineKeyboardButton --button 'botao_conf' --line 2 --text 'ON/OFF' --c
 ShellBot.InlineKeyboardButton --button 'botao_conf' --line 2 --text 'MENU' --callback_data '/menu'
 
 ShellBot.InlineKeyboardButton --button 'botao_conf' --line 3 --text 'GENERAR KEY' --callback_data '/keygen'
-ShellBot.InlineKeyboardButton --button 'botao_user' --line 1 --text 'GENERAR 1 KEY' --callback_data '/keygen'
-ShellBot.InlineKeyboardButton --button 'botao_user' --line 2 --text '💰 DONAR 💰' --callback_data  '1' --url 'https://paypal.me/Ghost?locale.x=es_XC'
+#ShellBot.InlineKeyboardButton --button 'botao_user' --line 1 --text 'GENERAR 1 KEY' --callback_data '/keygen'
+ShellBot.InlineKeyboardButton --button 'botao_user' --line 1 --text '💰 DONAR 💰' --callback_data  '1' --url 'https://paypal.me/Ghost?locale.x=es_XC'
 ShellBot.InlineKeyboardButton --button 'botao_user' --line 2 --text ' Contacto 📲' --callback_data  '1' --url 'https://t.me/GENKEY_BOT'
 
 ShellBot.InlineKeyboardButton --button 'botao_donar' --line 2 --text 'Donar Paypal' --callback_data '1' --url 'https://paypal.me/GHOST?locale.x=es_XC '
