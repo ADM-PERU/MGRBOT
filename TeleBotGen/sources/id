@@ -4,18 +4,20 @@ idirect="/etc/idir" && [[ ! -d $idirect ]] && mkdir $idirect
 
 myid_src () {
 [[ $(cat ${CID}|grep "${chatuser}" ) = "" ]] && {
-bot_retorno="====================\n"
+bot_retorno="──────────────────────\n"
           bot_retorno+="👋Hola  @$message_from_username . \n Tu ID no esta autorizado para poder usar el BOTGEN.\n"
-           bot_retorno+="===========================================\n"
+           bot_retorno+="──────────────────────\n"
           bot_retorno+="🆔 : <code>${chatuser}</code> \n    ↗️ TOCA PARA COPIAR.\n"
-          bot_retorno+="===========================================\n"
+          bot_retorno+="──────────────────────\n"
+          bot_retorno+="SOLICITUD DE AUTORIZACION ENVIADO...\n ESPERE HASTA QUE UN ADMIN SE CONTACTE CONTIGO.\n"
+          bot_retor="──────────────────────\n"
           bot_retor="$LINE\n"
-          bot_retor+=" Cliente『 $message_from_first_name $message_from_last_name 』\n"
-          bot_retor+=" Usuario【 @$message_from_username 】"
-          bot_retor+=" ESTA SOLICITANDO ACCESO 【 <code>${chatuser}</code> 】 \n"
-          bot_retor+=" PARA ACEPTAR DA CLICK AQUI /add  \n"
+          bot_retor+=" Cliente :『 $message_from_first_name $message_from_last_name 』\n"
+          bot_retor+=" Usuario :『  @$message_from_username 』\n"
+          bot_retor+=" 🆔 : <code>${chatuser}</code> \n"
+          bot_retor+=" ESTA SOLICITANDO PERMISO PARA ACCEDER AL BOT-GEN.\n COMANDO PARA AÑADIR USUARIO :  /add  \n"
           bot_retor+="$LINE\n"
-          bot_retor+=" VERIFIQUE SU TOKEN DE PAGO  ANTES DE LA AUTORIZACION"
+          bot_retor+="──────────────────────"
           bot_retor+="$LINE\n"
 msj_fun
 msj_add "$(cat < ${CIDdir}/Admin-ID)"
@@ -59,7 +61,7 @@ addID_reply () {
         idc=$(echo ${message_text[$id]} | awk '{print $3}' | sed -e 's/[^a-z0-9 -]//ig')
         valid=$(date '+%C%y-%m-%d' -d " +$idc days")
         echo "/${ids} | $valid" >> ${CID}
-          bot_retorno="  ✨ 𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘  $message_from_first_name  𝚊𝚕  BOTGEN.\n"
+          #bot_retorno="  ✨ 𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘  $message_from_first_name  𝚊𝚕  BOTGEN.\n"
           bot_retorno+="✅ID agregado✅\n"
           bot_retorno+="$LINE\n"
           #bot_retorno+="$(< ${CID})\n"
