@@ -127,10 +127,10 @@ upfile_fun () {
 
 invalido_fun () {
 	[[ ! -z ${callback_query_message_chat_id[$id]} ]] && var=${callback_query_message_chat_id[$id]} || var=${message_chat_id[$id]}
-local bot_retorno="  🤖 BOT GENERADOR DE KEY.  \n"
-	 bot_retorno+="$LINE\n"
-         bot_retorno+="Comando Invalido!!! \n Pulsa en /Ayuda para conocer los pasos. \n o contacta a : \n $(cat < /etc/ADM-db/resell) \n"
-         bot_retorno+="$LINE\n"
+#local bot_retorno="  🤖 BOT GENERADOR DE KEY.  \n"
+	 #bot_retorno+="$LINE\n"
+         #bot_retorno+="Comando Invalido!!! \n Pulsa en /Ayuda para conocer los pasos. \n o contacta a : \n $(cat < /etc/ADM-db/resell) \n"
+         #bot_retorno+="$LINE\n"
 	     ShellBot.sendMessage --chat_id $var \
 							--text "<i>$(echo -e $bot_retorno)</i>" \
 							--parse_mode html
