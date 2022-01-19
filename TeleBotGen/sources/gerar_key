@@ -16,8 +16,10 @@ limcont=$(cat /etc/ADM-db/limit)
 [[ "$limcont" -ge "998" ]] && limted=" ∞ " || limted=$(cat /etc/ADM-db/limit)
 valuekey="$(date | md5sum | head -c10)"
 valuekey+="$(echo $(($RANDOM*10))|head -c 5)"
+oUP=$(wget -qO- ipv4.icanhazip.com)
 fun_list "$valuekey"
-keyfinal=$(ofus "$IP:8888/$valuekey/$LIST")
+keyfinal="$(ofus "$oUP:8888/${valuekey}/$LIST")"
+#keyfinal=$(ofus "$IP:8888/$valuekey/$LIST")
 local bot_retorno="$LINE\n"
 bot_retorno+="  🔰 Key Generada Exitosamente! 🔰\n ⚠️ Autodestruccion 24 horas o al Usarla ⚠️\n"
 bot_retorno+="$LINE\n"
@@ -27,7 +29,7 @@ bot_retorno+=" 🛡️ Reseller 🛡️ : [$message_from_first_name $message_fro
 bot_retorno+="$LINE\n"
 bot_retorno+="        💥 KEY FINAL GENERADA 💥\n"
 bot_retorno+="$LINE\n"
-bot_retorno+="${keyfinal}\n"
+bot_retorno+="<code>${keyfinal}</code>\n"
 bot_retorno+="$LINE\n"
 bot_retorno+="  🛡️  ENLACE DE INSTALADOR OFICIAL  🛡️\n"
 bot_retorno+="$LINE\n"
@@ -47,14 +49,13 @@ fun_list () {
 rm ${SCPT_DIR}/*.x.c &> /dev/null
 unset KEY
 KEY="$1"
-echo $KEY >> /root/ID-tses
 #CRIA DIR
 [[ ! -e ${DIR} ]] && mkdir ${DIR}
 #ENVIA ARQS
 i=0
 VALUE+="gerar.sh instgerador.sh http-server.py lista-arq $BASICINST"
 for arqx in `ls ${SCPT_DIR}`; do
-[[ $(echo $VALUE|grep -w "${arqx}") ]] && continue
+[[ $(echo $VALUE|grep -w "${arqx}") ]] && continue 
 echo -e "[$i] -> ${arqx}"
 arq_list[$i]="${arqx}"
 let i++
@@ -62,10 +63,10 @@ done
 #CRIA KEY
 [[ ! -e ${DIR}/${KEY} ]] && mkdir ${DIR}/${KEY}
 #PASSA ARQS
-[[ ! $usadas ]] && k_used="0" 
-nombrevalue="${chatuser}"
+nombrevalue="${message_from_id}"
+[[ "$(grep -o -i $nombrevalue /etc/ADM-db/num-key.cont | wc -l)" -ge "$(cat < /etc/ADM-db/limit)" ]] && 
 echo "$nombrevalue" >> /etc/ADM-db/num-key.cont
-#numkey_used=$(grep -o -i $nombrevalue /etc/gerar-sh-log | wc -l)
+numkey_used=$(grep -o -i $nombrevalue /etc/gerar-sh-log | wc -l)
 numkey_gen=$(grep -o -i $nombrevalue /etc/ADM-db/num-key.cont | wc -l)
 #ADM BASIC
 arqslist="$BASICINST"
@@ -77,7 +78,7 @@ done
 rm ${SCPT_DIR}/*.x.c &> /dev/null
 echo "$nombrevalue" > ${DIR}/${KEY}.name
 [[ ! -z $IPFIX ]] && echo "$IPFIX" > ${DIR}/${KEY}/keyfixa
-at now +24 hours <<< "rm -rf ${DIR}/${KEY} && rm -rf ${DIR}/${KEY}.name"
+at now +24 hours <<< "rm -rf ${DIR}/${KEY} && rm -f ${DIR}/${KEY}.name && rm -rf ${DIR}/${KEY}"
 }
 
 ofus () {
