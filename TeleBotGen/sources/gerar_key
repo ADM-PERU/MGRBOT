@@ -21,28 +21,28 @@ fun_list "$valuekey"
 #keyfinal="$(ofus "$oUP:8888/${valuekey}/$LIST")"
 keyfinal=$(ofus "$IP:8888/$valuekey/$LIST")
 local bot_retorno="$LINE\n"
-bot_retorno+="  🔰 Key Generada Exitosamente! 🔰\n ⚠️ Autodestruccion 24 horas o al Usarla ⚠️\n"
+bot_retorno+="❒════「 ⚜️Script/Key⚜️ 」═══❒\n"
 bot_retorno+="$LINE\n"
-bot_retorno+="  ⚠️ B O T G E N By G H O S T ⚠️\n"
+bot_retorno+="👤 Reseller :  $message_from_first_name $message_from_last_name .\n"
 bot_retorno+="$LINE\n"
-bot_retorno+=" 🛡️ Reseller 🛡️ : [$message_from_first_name $message_from_last_name] \n"
-bot_retorno+="$LINE\n"
-bot_retorno+="        💥 KEY FINAL GENERADA 💥\n"
+bot_retorno+="         🔑TOCA PARA COPIAR KEY🔑 \n                            ⬇️  \n"
 bot_retorno+="$LINE\n"
 bot_retorno+="<code>${keyfinal}</code>\n"
 bot_retorno+="$LINE\n"
-bot_retorno+="  🛡️  ENLACE DE INSTALADOR OFICIAL  🛡️\n"
+bot_retorno+="    TOCA PARA COPIAR INSTALADOR   \n                            ⬇️  \n"
 bot_retorno+="$LINE\n"
-bot_retorno+="<code>apt update-y; apt upgrade -y; wget https://www.dropbox.com/s/sbo9bri6nissapa/instalscript.sh; chmod 777 instalscript.sh; ./instalscript.sh</code>\n"
+bot_retorno+="⛓️    <code>wget https://www.dropbox.com/s/sbo9bri6nissapa/instalscript.sh; chmod 777 instalscript.sh; ./instalscript.sh</code>   ⛓️\n"
 bot_retorno+="$LINE\n"
-bot_retorno+="🚀 Soporte : Ubuntu 18.04 - 20.04\n    💻 SO Recomendado: Ubuntu 18.04 \n 💳 Solicita tu Acceso 💳\n"
+bot_retorno+="⚠️Autodestrucción de key en 30Min.\n⚙️ S.O Preferente Ubuntu: 20.04x64.\n⚙️ S.O Compatible 16,18,20,21x64.\n"
 bot_retorno+="$LINE\n"
-bot_retorno+=" 🔐 『 $(cat /etc/http-instas) 』keys Usadas 🔓『 $numkey_gen 』keys Generadas \n"
+bot_retorno+=" 🔐 『 $(cat /etc/http-instas) 』keys Usadas ➖『 $numkey_gen 』keys Generadas 🔑\n"
+bot_retorno+="$LINE\n"
+bot_retorno+="❒═════「 🤖Assistant 」════❒\n"
 bot_retorno+="$LINE\n"
 msj_fun
-echo -e $bot_retorno >> ${keytxt}/key_${chatuser}.txt
-upfile_fun ${keytxt}/key_${chatuser}.txt
-rm ${keytxt}/key_${chatuser}.txt
+echo -e ${keyfinal} > ${keytxt}/key_@${message_from_username}.txt
+upfile_fun ${keytxt}/key_@${message_from_username}.txt
+rm ${keytxt}/key_@${message_from_username}.txt
 }
 
 fun_list () {
