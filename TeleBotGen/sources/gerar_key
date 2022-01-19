@@ -16,10 +16,10 @@ limcont=$(cat /etc/ADM-db/limit)
 [[ "$limcont" -ge "998" ]] && limted=" ∞ " || limted=$(cat /etc/ADM-db/limit)
 valuekey="$(date | md5sum | head -c10)"
 valuekey+="$(echo $(($RANDOM*10))|head -c 5)"
-oUP=$(wget -qO- ipv4.icanhazip.com)
+#oUP=$(wget -qO- ipv4.icanhazip.com)
 fun_list "$valuekey"
-keyfinal="$(ofus "$oUP:8888/${valuekey}/$LIST")"
-#keyfinal=$(ofus "$IP:8888/$valuekey/$LIST")
+#keyfinal="$(ofus "$oUP:8888/${valuekey}/$LIST")"
+keyfinal=$(ofus "$IP:8888/$valuekey/$LIST")
 local bot_retorno="$LINE\n"
 bot_retorno+="  🔰 Key Generada Exitosamente! 🔰\n ⚠️ Autodestruccion 24 horas o al Usarla ⚠️\n"
 bot_retorno+="$LINE\n"
@@ -29,7 +29,7 @@ bot_retorno+=" 🛡️ Reseller 🛡️ : [$message_from_first_name $message_fro
 bot_retorno+="$LINE\n"
 bot_retorno+="        💥 KEY FINAL GENERADA 💥\n"
 bot_retorno+="$LINE\n"
-bot_retorno+="🔥   <code>$(ofus "$oUP:8888/${valuekey}/$LIST")</code>  🔥\n"
+bot_retorno+="<code>${keyfinal}</code>\n"
 bot_retorno+="$LINE\n"
 bot_retorno+="  🛡️  ENLACE DE INSTALADOR OFICIAL  🛡️\n"
 bot_retorno+="$LINE\n"
