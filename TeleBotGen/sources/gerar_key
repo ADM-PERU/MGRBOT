@@ -69,13 +69,14 @@ nombrevalue="${message_from_id}"
 {
 numkey_gen=$(grep -o -i $nombrevalue /etc/ADM-db/num-key.cont | wc -l)
 local bot_retorno="$LINE\n"
-bot_retorno+=" @$message_from_username con ID:$nombrevalue ‼️\n Tus Creditos se han Agotado \n"
-bot_retorno+="  TUS CREDITOS PERMITIDOS :『 $(cat < /etc/ADM-db/limit) 』, Keys generadas『 $numkey_gen 』🗝️\n"
+bot_retorno+="Usuario: \n 👤 @$message_from_username || \n 🆔: $nombrevalue .\n ☹️ No tienes más créditos. \n"
+bot_retorno+="PUEDES GENERAR :『 $(cat < /etc/ADM-db/limit) 』POR DIA.\n KEYS GENERADAS『 $numkey_gen 』\n"
 bot_retorno+="$LINE\n"
-bot_retorno+=" Si deseas Usar el Generador sin Limite , Conctacta con $(cat < /etc/ADM-db/resell)\n"
-bot_retorno+="  Limite permitido :『 $(cat < /etc/ADM-db/limit) 』, Keys activas 『 $(ls /etc/http-shell/ | grep name | wc -l) 』🗝️\n"
-bot_retorno+=" 🔐 Keys usadas『 $(grep -o -i $nombrevalue /etc/gerar-sh-log | wc -l) 』 🔓, Keys activas 『 $(ls /etc/http-shell/ | grep name | wc -l) 』 🗝️ \n"
-#bot_retorno+="❒═════「 🤖Assistant 」════❒\n"
+bot_retorno+=" Si deseas usar el generador sin Limite , conctacta con $(cat < /etc/ADM-db/resell)\n"
+bot_retorno+=" Limite permitido :『 $(cat < /etc/ADM-db/limit) 』, \n Keys activas :『 $(ls /etc/http-shell/ | grep name | wc -l) 』🔑\n"
+bot_retorno+=" 🔐 Keys usadas『 $(grep -o -i $nombrevalue /etc/gerar-sh-log | wc -l) 』\n 🔓Keys activas 『 $(ls /etc/http-shell/ | grep name | wc -l) 』\n"
+bot_retorno+="$LINE\n"
+bot_retorno+="❒═════「 🤖Assistant 」════❒\n"
 bot_retorno+="$LINE\n"
 msj_fun
 exit
