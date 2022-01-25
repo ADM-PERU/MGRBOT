@@ -270,7 +270,7 @@ PID_on=$(ps x|grep -v grep|grep "modelid")
 limcont=$(cat /etc/ADM-db/limit) 
 [[ "${limcont}" = "999" ]] && limted="Ilimitado" || limted=$(cat /etc/ADM-db/limit)
 echo -e "$bar"
-echo -e " \e[47m \e[30m>>>>>>  BOTGEN ✨ \e[1;31mGHOST ✨ \e[1;30m Vers. ∞ Meta)\e[32m\e[47m \e[30m<<<<<< \e[0m"
+echo -e " \e[47m \e[30m>>>>>>  BOTGEN ✨ \e[1;31mGHOST ✨ \e[1;30m Vers. \e[1;32m ∞ Meta)\e[0m\e[47m \e[30m<<<<<< \e[0m"
 echo -e "$bar"
 echo -e "\033[1;32m[1] \033[1;36m> \033[1;37m TOKEN DEL BOT $tk "
 echo -e "\033[1;32m[2] \033[1;36m> \033[1;37m INICIAR/PARAR BOT $PID_GEN\033[0m"
