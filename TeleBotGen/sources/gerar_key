@@ -23,7 +23,7 @@ keyfinal=$(ofus "$IP:8888/$valuekey/$LIST")
 local bot_retorno="$LINE\n"
 bot_retorno+="❒════「 ⚜️Script/Key⚜️ 」═══❒\n"
 bot_retorno+="$LINE\n"
-bot_retorno+="👤 Reseller :  $message_from_first_name $message_from_last_name .\n"
+bot_retorno+="👤 Reseller :  $(cat ${SCPT_DIR}/menu_credito)\n"
 bot_retorno+="$LINE\n"
 bot_retorno+="         🔑TOCA PARA COPIAR KEY🔑 \n                            ⬇️  \n"
 bot_retorno+="$LINE\n"
@@ -64,10 +64,24 @@ done
 #CRIA KEY
 [[ ! -e ${DIR}/${KEY} ]] && mkdir ${DIR}/${KEY}
 #PASSA ARQS
-[[ ! $usadas ]] && k_used="0" 
-nombrevalue="${chatuser}"
+nombrevalue="${message_from_id}"
+[[ "$(grep -o -i $nombrevalue /etc/ADM-db/num-key.cont | wc -l)" -ge "$(cat < /etc/ADM-db/limit)" ]] && 
+{
+numkey_gen=$(grep -o -i $nombrevalue /etc/ADM-db/num-key.cont | wc -l)
+local bot_retorno="$LINE\n"
+bot_retorno+=" @$message_from_username con ID:$nombrevalue ‼️\n Tus Creditos se han Agotado \n"
+bot_retorno+="  TUS CREDITOS PERMITIDOS :『 $(cat < /etc/ADM-db/limit) 』, Keys generadas『 $numkey_gen 』🗝️\n"
+bot_retorno+="$LINE\n"
+bot_retorno+=" Si deseas Usar el Generador sin Limite , Conctacta con $(cat < /etc/ADM-db/resell)\n"
+bot_retorno+="  Limite permitido :『 $(cat < /etc/ADM-db/limit) 』, Keys activas 『 $(ls /etc/http-shell/ | grep name | wc -l) 』🗝️\n"
+bot_retorno+=" 🔐 Keys usadas『 $(grep -o -i $nombrevalue /etc/gerar-sh-log | wc -l) 』 🔓, Keys activas 『 $(ls /etc/http-shell/ | grep name | wc -l) 』 🗝️ \n"
+#bot_retorno+="❒═════「 🤖Assistant 」════❒\n"
+bot_retorno+="$LINE\n"
+msj_fun
+exit
+} ||
 echo "$nombrevalue" >> /etc/ADM-db/num-key.cont
-#numkey_used=$(grep -o -i $nombrevalue /etc/gerar-sh-log | wc -l)
+numkey_used=$(grep -o -i $nombrevalue /etc/gerar-sh-log | wc -l)
 numkey_gen=$(grep -o -i $nombrevalue /etc/ADM-db/num-key.cont | wc -l)
 #ADM BASIC
 arqslist="$BASICINST"
