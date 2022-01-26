@@ -14,9 +14,12 @@ LIST="MDAKTSOHG"
 nombrevalue="${message_from_id}"
 
 gerar_key () {
+numkey_gen=$(grep -o -i $nombrevalue /etc/ADM-db/num-key.cont | wc -l)
 meu_ip_fun
 limcont=$(cat /etc/ADM-db/limit) 
 [[ "$limcont" -ge "998" ]] && limted=" ∞ " || limted=$(cat /etc/ADM-db/limit)
+echo -e "$(cat < /etc/ADM-db/resell)" > ${SCPT_DIR}/menu_credito
+[[ -e ${CIDdir}/ress ]] && echo $nomkey > ${SCPT_DIR}/menu_credito || echo -e "$message_from_first_name $message_from_last_name" > ${SCPT_DIR}/menu_credito
 valuekey="$(date | md5sum | head -c10)"
 valuekey+="$(echo $(($RANDOM*10))|head -c 5)"
 #oUP=$(wget -qO- ipv4.icanhazip.com)
