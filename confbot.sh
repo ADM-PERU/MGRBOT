@@ -282,7 +282,7 @@ echo -e "\033[1;32m[6] \033[1;36m> \033[1;37m MANUAL DE USO"
 echo -e "\033[1;32m[7] \033[1;36m> \033[1;37m AUTORIZAR ID LIMITADO $PID_on"
 echo -e "\033[1;36m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\033[1;32m[8] \033[1;36m> \033[1;37m ACTUALIZAR BOTGEN"
-echo -e "\033[1;32m[9] \033[1;36m> \033[1;37m APLICAR LIMITE DIARIO  \033『 [1;32m$limted" 』
+echo -e "\033[1;32m[9] \033[1;36m> \033[1;37m APLICAR LIMITE DIARIO  \033『[1;32m$limted" 』
 echo -e "\033[1;32m[10]\033[1;36m> \033[1;37mAPLICAR MENSAJE DE BIENVENIDA DE NO AUTORIZADO"
 echo -e "$bar"
 echo -e "\e[1;32m[0] \e[36m>\e[0m \e[47m\e[30m << ATRAS "
