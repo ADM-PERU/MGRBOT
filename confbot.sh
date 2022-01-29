@@ -57,17 +57,20 @@ echo "$opcion" > ${CIDdir}/limit
 echo "$opcion" > /etc/limit
 #echo "sed -i "s/1001282138571/0/g" /etc/gerar-sh-log
 echo '#!/bin/bash -e
-sleep 24h
-uskk=$(cat < /etc/ADM-db/limit)
-lim=$(cat < /etc/limit)
-uskk=$(( $uskk + $lim ))
-echo $uskk > /etc/ADM-db/limit
-screen -dmS sumlimit bash /etc/ADM-db/sumlimit
-exit
-' > ${CIDdir}/sumlimit
+sleep 24h > ${CIDdir}/limit
+echo 'newq=$(cat < /etc/ADM-db/limit)
+#uskk=$(cat < /etc/ADM-db/limit)
+opcion=$(cat < /etc/limit)
+newsum=$(($newq + $opcion))
+echo "$newsum"  < /etc/ADM-db/limit
+#lim=$(cat < /etc/limit)
+#uskk=$(( $uskk + $lim ))
+#echo $uskk > /etc/ADM-db/limit
+screen -dmS sumlimit bash /etc/ADM-db/sumlimit&
+exit' >> ${CIDdir}/sumlimit
 echo -e "$bar"
-read foo
-screen -dmS sumlimit bash /etc/ADM-db/sumlimit
+read p 'ENTER PARA SALIR'
+screen -dmS sumlimit bash /etc/ADM-db/sumlimit&
 bot_gen
 }
 
