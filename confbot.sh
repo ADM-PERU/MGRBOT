@@ -57,12 +57,12 @@ echo "$opcion" > ${CIDdir}/limit
 echo "$opcion" > /etc/limit
 #echo "sed -i "s/1001282138571/0/g" /etc/gerar-sh-log
 echo '#!/bin/bash -e
-sleep 24h > ${CIDdir}/sumlimit
-echo newq=$(cat < /etc/ADM-db/limit)
+sleep 24h' > ${CIDdir}/sumlimit
+echo 'newq=$(cat < /etc/ADM-db/limit)
 #uskk=$(cat < /etc/ADM-db/limit)
 opcion=$(cat < /etc/limit)
 newsum=$(($newq + $opcion))
-echo "$newsum"  < /etc/ADM-db/slimit
+echo "$newsum"  > /etc/ADM-db/limit
 #lim=$(cat < /etc/limit)
 #uskk=$(( $uskk + $lim ))
 #echo $uskk > /etc/ADM-db/limit
