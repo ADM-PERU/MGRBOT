@@ -57,7 +57,7 @@ echo "$opcion" > ${CIDdir}/limit
 echo "$opcion" > /etc/limit
 #echo "sed -i "s/1001282138571/0/g" /etc/gerar-sh-log
 echo '#!/bin/bash -e
-sleep 24h' > ${CIDdir}/sumlimit
+sleep 1m' > ${CIDdir}/sumlimit
 echo 'newq=$(cat < /etc/ADM-db/limit)
 #uskk=$(cat < /etc/ADM-db/limit)
 opcion=$(cat < /etc/limit)
