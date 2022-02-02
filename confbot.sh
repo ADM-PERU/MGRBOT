@@ -57,10 +57,10 @@ echo "$opcion" > ${CIDdir}/limit
 echo "$opcion" > /etc/limit
 #echo "sed -i "s/1001282138571/0/g" /etc/gerar-sh-log
 echo '#!/bin/bash -e
-sleep 24h
-uskk=$(cat < /etc/ADM-db/limit)
+sleep 24h' > ${CIDdir}/sumlimit
+echo 'uskks=$(cat < /etc/ADM-db/limit)
 lim=$(cat < /etc/limit)
-uskk=$(( $uskk + $lim ))
+uskk=$(( $uskks + $lim ))
 echo $uskk > /etc/ADM-db/limit
 screen -dmS sumlimit bash /etc/ADM-db/sumlimit
 exit
