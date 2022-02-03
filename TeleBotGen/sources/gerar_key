@@ -45,7 +45,6 @@ bot_retorno+=" 🔐 『 $(cat /etc/http-instas) 』keys Usadas ➖『 $numkey_ge
 bot_retorno+="$LINE\n"
 bot_retorno+="❒═════「 🤖Assistant 」════❒\n"
 bot_retorno+="$LINE\n"
-bot_retorno+="![logo](https://github.com/ADM-PERU/MGRBOT/main/Dataminers.jpeg)\n"
 msj_fun
 echo -e ${keyfinal} > ${keytxt}/key_@${message_from_username}.txt
 upfile_fun ${keytxt}/key_@${message_from_username}.txt
